@@ -1,0 +1,35 @@
+name: Feature request
+description: Propose a tasteful addition to an objectively tasteless idea.
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What limitation or use case should this address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the API, ABI, CLI, or behavior you have in mind.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This keeps standard Brainfuck behavior unchanged outside extended mode.
+          required: true
+        - label: This does not grant Brainfuck programs arbitrary filesystem, shell, or JavaScript access.
+          required: true

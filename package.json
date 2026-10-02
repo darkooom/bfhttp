@@ -1,0 +1,43 @@
+{
+  "name": "bfhttp",
+  "version": "0.1.0",
+  "description": "Run real HTTP servers with Brainfuck, because JavaScript was not painful enough",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "bfhttp": "./dist/cli/index.js"
+  },
+  "files": ["dist", "examples", "README.md", "CHANGELOG.md", "LICENSE"],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "tsx src/cli/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "check": "npm test && npm run build",
+    "prepack": "npm run build",
+    "test": "vitest run",
+    "test:run": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": ["brainfuck", "esolang", "http", "interpreter", "runtime", "cli", "web-server"],
+  "author": "darkooom",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.3"
+  }
+}
